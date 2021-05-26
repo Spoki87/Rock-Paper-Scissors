@@ -39,3 +39,18 @@ footer div{
     font-size:44px;
     text-align: center;
 }
+
+footer button{
+    display:block;
+    font-size:22px;
+    margin:10px auto;
+    border:2px black solid;
+    width: 200px;
+    height: 50px;
+}
+
+footer button:hover{
+    color:white;
+    background-color: black;
+    transition-duration: 0.5s;
+}

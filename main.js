@@ -6,7 +6,7 @@ const pcPaper=document.getElementById('PCpaper');
 const pcRock=document.getElementById('PCrock');
 const pcSissors=document.getElementById('PCsissors');
 
-const button=document.createElement('button');
+const buttonReset=document.querySelector('button');
 const score=document.getElementById('score');
 
 const plaAgin=()=>{
@@ -31,7 +31,7 @@ const draw=()=>{
 }
 
 const whosWinner=(pc,user)=>{
-   if(user===pc)
+        if(user===pc)
    {
        score.textContent='REMIS';
    }
@@ -62,24 +62,48 @@ const whosWinner=(pc,user)=>{
 }
 
 const choisePaper=()=>{
-    userPaper.style.backgroundColor='black';
-    const pcChoise=draw();
-    const userChoise='paper';
-    whosWinner(pcChoise,userChoise);
+    if(score.textContent==='')
+    {
+        userPaper.style.backgroundColor='black';
+        const pcChoise=draw();
+        const userChoise='paper';
+        whosWinner(pcChoise,userChoise);
+    }
+    else
+    {
+        alert("BŁĄD, ZRESETUJ GRĘ");
+    }
+    
 }
 
 const choiseRock=()=>{
-    userRock.style.backgroundColor='black';
-    const pcChoise=draw();
-    const userChoise='rock';
-    whosWinner(pcChoise,userChoise);
+    if(score.textContent==='')
+    {
+        userRock.style.backgroundColor='black';
+        const pcChoise=draw();
+        const userChoise='rock';
+        whosWinner(pcChoise,userChoise);
+    }
+    else
+    {
+        alert("BŁĄD, ZRESETUJ GRĘ");
+    }
+    
 }
 
 const choiseSissors=()=>{
-    userSissors.style.backgroundColor='black';
-    const pcChoise=draw();
-    const userChoise='sissors';
-    whosWinner(pcChoise,userChoise);
+    if(score.textContent==='')
+    {
+        userSissors.style.backgroundColor='black';
+        const pcChoise=draw();
+        const userChoise='sissors';
+        whosWinner(pcChoise,userChoise);
+    }
+    else
+    {
+        alert("BŁĄD, ZRESETUJ GRĘ");
+    }
+    
 }
 
 
@@ -88,3 +112,12 @@ userPaper.addEventListener('click',choisePaper);
 userRock.addEventListener('click',choiseRock);
 userSissors.addEventListener('click',choiseSissors);
 
+buttonReset.addEventListener('click',()=>{
+    score.textContent='';
+    userPaper.style.backgroundColor='';
+    userRock.style.backgroundColor='';
+    userSissors.style.backgroundColor='';
+    pcPaper.style.backgroundColor='';
+    pcRock.style.backgroundColor='';
+    pcSissors.style.backgroundColor='';
+})
